@@ -1,6 +1,7 @@
 import DefaultLayout from '../../layout/DefaultLayout';
 import DatePickerOne from '../../components/Forms/DatePicker/DatePickerOne';
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
+import { Button } from '@material-tailwind/react';
 
 function SolvedComplaint() {
   return (
@@ -62,12 +63,16 @@ function SolvedComplaint() {
               <DatePickerOne />
             </div>
             <div>
-              <button className="inline-flex items-center justify-center bg-primary py-1.5 rounded px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
+              <Button variant="gradient" className="capitalize" color="blue">
                 Search
-              </button>
-              <button className="ms-2 inline-flex items-center justify-center bg-green-500 py-1.5 rounded px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
+              </Button>
+              <Button
+                variant="gradient"
+                className="ms-2 capitalize"
+                color="green"
+              >
                 Reset
-              </button>
+              </Button>
             </div>
           </div>
         </div>

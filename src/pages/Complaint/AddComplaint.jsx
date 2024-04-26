@@ -4,7 +4,23 @@ import Popup from '../../components/popup/popup';
 import DefaultLayout from '../../layout/DefaultLayout';
 import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
 import ArticleIcon from '@mui/icons-material/Article';
-
+import { Alert, Button } from '@material-tailwind/react';
+function Icon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-6 w-6"
+    >
+      <path
+        fillRule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
 function NewComplaint() {
   const [showPopup, setShowPopup] = useState(false);
   return (
@@ -141,15 +157,16 @@ function NewComplaint() {
               <label className="mb-3 block text-black dark:text-white">
                 &nbsp;
               </label>
-              <button
-                className="inline-flex items-center justify-center bg-primary py-1.5 rounded px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
-                onClick={() => setShowPopup(true)}
-              >
+              <Button variant="gradient" className="capitalize" color="blue">
                 Submit
-              </button>
-              <button className="ms-2 inline-flex items-center justify-center bg-green-500 py-1.5 rounded px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
+              </Button>
+              <Button
+                variant="gradient"
+                className="ms-2 capitalize"
+                color="green"
+              >
                 Reset
-              </button>
+              </Button>
             </div>
             <Popup
               title="Complain Details"
@@ -162,36 +179,17 @@ function NewComplaint() {
                 title2: 'Print',
                 link: '',
                 link2: '',
-                icon: <ArticleIcon />,
-                icon2: <LocalPrintshopIcon />,
+                icon: '',
+                icon2: '',
               }}
             >
               <div className="overflow-y-auto" style={{ maxHeight: 400 }}>
-                <div className="flex w-full border-l-6 border-[#34D399] bg-[#34D399] bg-opacity-[15%] px-7 py-1 shadow-md dark:bg-gray-200 dark:bg-opacity-30 md:p-5">
-                  <div className="mr-5 flex h-9 w-full max-w-[36px] items-center justify-center rounded-lg bg-[#34D399]">
-                    <svg
-                      width="16"
-                      height="12"
-                      viewBox="0 0 16 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15.2984 0.826822L15.2868 0.811827L15.2741 0.797751C14.9173 0.401867 14.3238 0.400754 13.9657 0.794406L5.91888 9.45376L2.05667 5.2868C1.69856 4.89287 1.10487 4.89389 0.747996 5.28987C0.417335 5.65675 0.417335 6.22337 0.747996 6.59026L0.747959 6.59029L0.752701 6.59541L4.86742 11.0348C5.14445 11.3405 5.52858 11.5 5.89581 11.5C6.29242 11.5 6.65178 11.3355 6.92401 11.035L15.2162 2.11161C15.5833 1.74452 15.576 1.18615 15.2984 0.826822Z"
-                        fill="white"
-                        stroke="white"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="w-full">
-                    <h5 className="mb-3 text-lg font-semibold text-black dark:text-[#34D399] ">
-                      Complaint Sent Successfully
-                    </h5>
-                    <p className="text-base leading-relaxed text-body">
-                      Complaint No. 2149873
-                    </p>
-                  </div>
-                </div>
+                <Alert
+                  icon={<Icon />}
+                  className="rounded-none border-l-4 border-[#2ec946] bg-[#2ec946]/10 font-medium text-[#2ec946]"
+                >
+                  Complaint Added
+                </Alert>
                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                   <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <tbody>
@@ -234,9 +232,9 @@ function NewComplaint() {
                       </tr>
                       <tr className="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <td className="p-2">Complain Description</td>
-                        <td className="p-2">abc</td>
-                        <td className="p-2"></td>
-                        <td className="p-2"></td>
+                        <td className="p-2" colSpan={'3'}>
+                          abc
+                        </td>
                       </tr>
                     </tbody>
                   </table>

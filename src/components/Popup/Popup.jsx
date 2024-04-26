@@ -40,14 +40,18 @@ export default function Popup({
 
         <DialogFooter>
           {actions.title !== '' && (
-            <Button variant="gradient" color="green">
+            <Button variant="gradient" className="capitalize" color="blue">
               <span>
                 {actions.title} {actions.icon}
               </span>
             </Button>
           )}
           {actions.title !== '' && (
-            <Button className="ms-2" variant="gradient" color="blue">
+            <Button
+              className="ms-2 capitalize"
+              variant="gradient"
+              color="green"
+            >
               <span>
                 {actions.title2} {actions.icon2}
               </span>

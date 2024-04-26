@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import Popup from '../../components/popup/popup';
 import DefaultLayout from '../../layout/DefaultLayout';
+import { Button } from '@material-tailwind/react';
 
 function ActionTakeComplaint() {
   const [showAction, setShowAction] = useState(false);
@@ -52,12 +53,16 @@ function ActionTakeComplaint() {
               <label className="mb-3 block text-black dark:text-white">
                 &nbsp;
               </label>
-              <button className="inline-flex items-center justify-center bg-primary py-1.5 rounded px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
+              <Button variant="gradient" className="capitalize" color="blue">
                 Search
-              </button>
-              <button className="ms-2 inline-flex items-center justify-center bg-green-500 py-1.5 rounded px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
+              </Button>
+              <Button
+                variant="gradient"
+                className="ms-2 capitalize"
+                color="green"
+              >
                 Reset
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -186,12 +191,14 @@ function ActionTakeComplaint() {
                 ></textarea>
               </div>
               <div>
-                <button
+                <Button
                   onClick={() => setShowAction(false)}
-                  className="inline-flex items-center justify-center bg-primary py-1.5 rounded px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
+                  variant="gradient"
+                  className="capitalize"
+                  color="blue"
                 >
                   Submit
-                </button>
+                </Button>
               </div>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import { Button } from '@material-tailwind/react';
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import DefaultLayout from '../../layout/DefaultLayout';
 
@@ -50,12 +51,16 @@ function AddFeedback() {
               <label className="mb-3 block text-black dark:text-white">
                 &nbsp;
               </label>
-              <button className="inline-flex items-center justify-center bg-primary py-1.5 rounded px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
-                Submit
-              </button>
-              <button className="ms-2 inline-flex items-center justify-center bg-green-500 py-1.5 rounded px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
+              <Button variant="gradient" className="capitalize" color="blue">
+                Search
+              </Button>
+              <Button
+                variant="gradient"
+                className="ms-2 capitalize"
+                color="green"
+              >
                 Reset
-              </button>
+              </Button>
             </div>
           </div>
         </div>
